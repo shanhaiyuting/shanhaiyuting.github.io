@@ -1,0 +1,1347 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://gohugo.io/" version="0.91.0">Hugo</generator><title type="html">Shortcodes on 山海屿亭</title><subtitle type="html">愿山海广阔，有一屿可寄身，有一亭可静心</subtitle><link href="https://shanhaiyuting.cn/tags/shortcodes/" rel="alternate" type="text/html" title="HTML"/><link href="https://shanhaiyuting.cn/tags/shortcodes/feed.xml" rel="self" type="application/atom+xml" title="Atom"/><link href="https://shanhaiyuting.cn/tags/shortcodes/feed.json" rel="alternate" type="application/json" title="Json"/><updated>2021-12-29T15:39:09+00:00</updated><id>https://shanhaiyuting.cn/tags/shortcodes/</id><entry><title type="html">Includes</title><link href="https://shanhaiyuting.cn/posts/advanced/includes/?utm_source=atom_feed" rel="alternate" type="text/html" hreflang="en"/><id>https://shanhaiyuting.cn/posts/advanced/includes/</id><author><name>John Doe</name></author><published>2021-05-23T20:00:00+01:00</published><updated>2021-12-29T23:37:57+08:00</updated><content type="html"><![CDATA[
+
+
+  <div class="gblog-toc gblog-toc__level--3"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#examples">Examples</a>
+          <ul>
+            <li><a href="#markdown-file-default">Markdown file (default)</a></li>
+            <li><a href="#language-files">Language files</a></li>
+            <li><a href="#special-include-types">Special include types</a>
+              <ul>
+                <li><a href="#html">HTML</a></li>
+                <li><a href="#pages">Pages</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav><hr></div>
+
+
+<p>Include shortcode can include files of different types. By specifying a language, the included file will have syntax highlighting.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tpl" data-lang="tpl"><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">include</span> <span class="na">file</span><span class="o">=</span><span class="s2">&#34;relative/path/from/hugo/root&#34;</span> <span class="na">language</span><span class="o">=</span><span class="s2">&#34;go&#34;</span> <span class="na">markdown</span><span class="o">=[</span><span class="kc">false</span><span class="o">|</span><span class="kc">true</span><span class="o">]</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span></code></pre></div><p>Attributes:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Usage</th>
+<th>default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file</td>
+<td>path to the included file relative to the Hugo root</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>language</td>
+<td>language for <a class="gblog-markdown__link" href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages">syntax highlighting</a></td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>type</td>
+<td>special include type (<code>html,page</code>)</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>options</td>
+<td>highlighting <a class="gblog-markdown__link" href="https://gohugo.io/content-management/syntax-highlighting/#highlight-shortcode">options</a></td>
+<td><code>linenos=table</code></td>
+</tr>
+</tbody>
+</table>
+<div class="gblog-post__anchorwrap">
+    <h2 id="examples">
+        Examples
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/includes/#examples" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Examples" href="#examples">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><div class="gblog-post__anchorwrap">
+    <h3 id="markdown-file-default">
+        Markdown file (default)
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/includes/#markdown-file-default" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Markdown file (default)" href="#markdown-file-default">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h3>
+</div><p>If no other options are specified, files will be rendered as Markdown using the <code>RenderString</code> <a class="gblog-markdown__link" href="https://gohugo.io/functions/renderstring/">function</a>.</p>
+<blockquote class="gblog-hint warning">
+  <strong>Location of markdown files</strong><br>
+If you include markdown files that should not get a menu entry, place them outside the content folder or exclude them otherwise.
+</blockquote>
+
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tpl" data-lang="tpl"><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">include</span> <span class="na">file</span><span class="o">=</span><span class="s2">&#34;/static/_includes/example.md.part&#34;</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span></code></pre></div><!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
+
+
+
+
+
+
+<div class="gblog-include"><p><em><strong>Example Mardown include</strong></em></p>
+<p>File including a simple Markdown table.</p>
+<table>
+<thead>
+<tr>
+<th>Head 1</th>
+<th>Head 2</th>
+<th>Head 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<!-- spellchecker-enable -->
+<!-- prettier-ignore-end -->
+<div class="gblog-post__anchorwrap">
+    <h3 id="language-files">
+        Language files
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/includes/#language-files" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Language files" href="#language-files">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h3>
+</div><p>This method can be used to include source code files and keep them automatically up to date.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tpl" data-lang="tpl"><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">include</span> <span class="na">file</span><span class="o">=</span><span class="s2">&#34;config.yaml&#34;</span> <span class="na">language</span><span class="o">=</span><span class="s2">&#34;yaml&#34;</span> <span class="na">options</span><span class="o">=</span><span class="s2">&#34;linenos=table,hl_lines=5-6,linenostart=100&#34;</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span></code></pre></div><p><strong>Code Include:</strong></p>
+<!-- prettier-ignore-start -->
+<!-- spellchecker-disable -->
+
+
+
+
+
+
+<div class="gblog-include"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="hl"><span class="lnt">104
+</span></span><span class="hl"><span class="lnt">105
+</span></span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nn">---</span><span class="w">
+</span><span class="w"></span><span class="nt">baseURL</span><span class="p">:</span><span class="w"> </span><span class="l">https://shanhaiyuting.cn/</span><span class="w">
+</span><span class="w"></span><span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">山海屿亭</span><span class="w">
+</span><span class="w"></span><span class="nt">theme</span><span class="p">:</span><span class="w"> </span><span class="l">hugo-geekblog</span><span class="w">
+</span><span class="hl"><span class="w"></span><span class="nt">pygmentsUseClasses</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span><span class="hl"><span class="w"></span><span class="nt">pygmentsCodeFences</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span><span class="w"></span><span class="nt">enableGitInfo</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w"></span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="m">180000</span><span class="w">
+</span><span class="w"></span><span class="nt">pluralizeListTitles</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">paginate</span><span class="p">:</span><span class="w"> </span><span class="m">5</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">markup</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">goldmark</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">renderer</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span><span class="nt">unsafe</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">  </span><span class="nt">tableOfContents</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">startLevel</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span><span class="w">    </span><span class="nt">endLevel</span><span class="p">:</span><span class="w"> </span><span class="m">9</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">taxonomies</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="l">authors</span><span class="w">
+</span><span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l">tags</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">mediaTypes</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="s2">&#34;application/atom+xml&#34;</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="nt">suffixes</span><span class="p">:</span><span class="w">
+</span><span class="w">      </span>- <span class="s2">&#34;xml&#34;</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">outputFormats</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">Atom</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="c"># https://validator.w3.org/feed/docs/atom.html#whatIsAtom</span><span class="w">
+</span><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Atom&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">mediaType</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;application/atom+xml&#34;</span><span class="w">
+</span><span class="w">    </span><span class="c"># generated file: &lt;baseName&gt;.&lt;mediaType.&#34;application/atom+xml&#34;.suffixes[0]&gt; = atom.xml</span><span class="w">
+</span><span class="w">    </span><span class="nt">baseName</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;feed&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">isPlainText</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w">    </span><span class="nt">rel</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;alternate&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">isHTML</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w">    </span><span class="nt">noUgly</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">    </span><span class="nt">permalinkable</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w">  </span><span class="nt">Json</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span><span class="c"># https://www.jsonfeed.org/2020/08/07/json-feed-version.html</span><span class="w">
+</span><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Json&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">mediaType</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;application/json&#34;</span><span class="w">
+</span><span class="w">    </span><span class="c"># generated file: &lt;baseName&gt;.&lt;mediaType.&#34;application/feed+json&#34;.suffixes[0]&gt; = feed.json</span><span class="w">
+</span><span class="w">    </span><span class="nt">baseName</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;feed&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">isPlainText</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w">    </span><span class="nt">rel</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;alternate&#34;</span><span class="w">
+</span><span class="w">    </span><span class="nt">isHTML</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w">    </span><span class="nt">noUgly</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">    </span><span class="nt">permalinkable</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">outputs</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">home</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="l">HTML</span><span class="w">
+</span><span class="w">    </span>- <span class="l">ATOM</span><span class="w">
+</span><span class="w">    </span>- <span class="l">JSON</span><span class="w">
+</span><span class="w">  </span><span class="nt">page</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="l">HTML</span><span class="w">
+</span><span class="w">  </span><span class="nt">section</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="l">HTML</span><span class="w">
+</span><span class="w">  </span><span class="nt">taxonomy</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="l">HTML</span><span class="w">
+</span><span class="w">  </span><span class="nt">term</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="l">HTML</span><span class="w">
+</span><span class="w">    </span>- <span class="l">ATOM</span><span class="w">
+</span><span class="w">    </span>- <span class="l">JSON</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">enableRobotsTXT</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">
+</span><span class="w"></span><span class="nt">params</span><span class="p">:</span><span class="w">
+</span><span class="w">  </span><span class="nt">subtitle</span><span class="p">:</span><span class="w"> </span><span class="l">愿山海广阔，有一屿可寄身，有一亭可静心</span><span class="w">
+</span><span class="w">  </span><span class="nt">description</span><span class="p">:</span><span class="w"> 
+</span><span class="w">  </span><span class="nt">images</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="s2">&#34;favicon/android-chrome-512x512.png&#34;</span><span class="w">
+</span><span class="w">
+</span><span class="w">  </span><span class="nt">geekblogToC</span><span class="p">:</span><span class="w"> </span><span class="m">3</span><span class="w">
+</span><span class="w">  </span><span class="nt">geekblogAuthor</span><span class="p">:</span><span class="w"> </span><span class="l">yuting</span><span class="w">
+</span><span class="w">
+</span><span class="w">  </span><span class="nt">geekblogLegalNotice</span><span class="p">:</span><span class="w"> </span><span class="l">https://thegeeklab.de/legal-notice/#contact-information</span><span class="w">
+</span><span class="w">  </span><span class="nt">geekblogPrivacyPolicy</span><span class="p">:</span><span class="w"> </span><span class="l">https://thegeeklab.de/legal-notice/#privacy-policy</span><span class="w">
+</span><span class="w">
+</span><span class="w">  </span><span class="nt">geekblogImageLazyLoading</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">  </span><span class="nt">geekblogDarkModeDim</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="w">  </span><span class="nt">geekblogTagsToMenu</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div></div>
+
+<!-- spellchecker-enable -->
+<!-- prettier-ignore-end -->
+<div class="gblog-post__anchorwrap">
+    <h3 id="special-include-types">
+        Special include types
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/includes/#special-include-types" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Special include types" href="#special-include-types">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h3>
+</div><div class="gblog-post__anchorwrap">
+    <h4 id="html">
+        HTML
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/includes/#html" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor HTML" href="#html">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h4>
+</div><p>HTML content will be filtered by the <code>safeHTML</code> filter and added to the rendered page output.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tpl" data-lang="tpl"><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">include</span> <span class="na">file</span><span class="o">=</span><span class="s2">&#34;/static/_includes/example.html.part&#34;</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span></code></pre></div>
+
+
+
+
+
+<div class="gblog-include"><p>
+<i><b>Example HTML include</b></i>
+</p>
+
+<h4>This is heading 4</h4>
+<h5>This is heading 5</h5>
+<h6>This is heading 6</h6>
+</div>
+
+<div class="gblog-post__anchorwrap">
+    <h4 id="pages">
+        Pages
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/includes/#pages" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Pages" href="#pages">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h4>
+</div><p>In some situations, it can be helpful to include Markdown files that also contain shortcodes. While the <a class="gblog-markdown__link" href="#markdown-file-default">default method</a> works fine to render plain Markdown, shortcodes are not parsed. The only way to get this to work is to use Hugo pages. There are several ways to structure these include pages, so whatever you do, keep in mind that Hugo needs to be able to render and serve these files as regular pages! How it works:</p>
+<ol>
+<li>First you need to create a directory <strong>within</strong> your content directory. For this example site <code>_includes</code> is used.</li>
+<li>Place your Markdown files within the <code>_includes</code> folder e.g. <code>/_includes/include-page.md</code>. Make sure to name it <code>*.md</code>.</li>
+<li>Include the page using <code>{{&lt; include file=&quot;/_includes/include-page.md&quot; &gt;}}</code>.</li>
+</ol>
+<p>Resulting structure should look like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell">_includes/
+ ├── include-page.md
+ └── _index.md
+</code></pre></div>
+
+
+
+
+
+<div class="gblog-include"></div>
+
+]]></content><category scheme="https://shanhaiyuting.cn/authors/john-doe" term="john-doe" label="john-doe"/><category scheme="https://shanhaiyuting.cn/tags/documentation" term="documentation" label="Documentation"/><category scheme="https://shanhaiyuting.cn/tags/shortcodes" term="shortcodes" label="Shortcodes"/></entry><entry><title type="html">Mermaid</title><link href="https://shanhaiyuting.cn/posts/advanced/mermaid/?utm_source=atom_feed" rel="alternate" type="text/html" hreflang="en"/><id>https://shanhaiyuting.cn/posts/advanced/mermaid/</id><author><name>John Doe</name></author><published>2021-05-23T20:00:00+01:00</published><updated>2021-12-29T23:37:57+08:00</updated><content type="html"><![CDATA[<p><a class="gblog-markdown__link" href="https://mermaidjs.github.io/">Mermaid</a> is library for generating SVG charts and diagrams from text.</p>
+<div class="gblog-post__anchorwrap">
+    <h2 id="example">
+        Example
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/mermaid/#example" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Example" href="#example">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><div class="gblog-columns flex flex-wrap flex-mobile-column">
+  
+  <div class="gblog-columns__content gblog-markdown--nested flex-even">
+    <!-- prettier-ignore -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tpl" data-lang="tpl"><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">mermaid</span> <span class="na">class</span><span class="o">=</span><span class="s2">&#34;text-center&#34;</span><span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span><span class="x">sequenceDiagram
+</span><span class="x">    Alice-&gt;&gt;Bob: Hello Bob, how are you?
+</span><span class="x">    alt is sick
+</span><span class="x">        Bob-&gt;&gt;Alice: Not so good :(
+</span><span class="x">    else is well
+</span><span class="x">        Bob-&gt;&gt;Alice: Feeling fresh like a daisy
+</span><span class="x">    end
+</span><span class="x">    opt Extra response
+</span><span class="x">        Bob-&gt;&gt;Alice: Thanks for asking
+</span><span class="x">    end
+</span><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="na">mermaid</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span></code></pre></div>
+  </div>
+  
+  <div class="gblog-columns__content gblog-markdown--nested flex-even">
+    <!-- spellchecker-disable -->
+<!-- prettier-ignore -->
+<script defer src="/js/mermaid-84f026ce08.min.js"></script>
+<script defer src="/js/mermaid-loader-1bd1515cbf.min.js"></script>
+<pre class="gblog-mermaid mermaid text-center">
+sequenceDiagram
+    Alice->>Bob: Hello Bob, how are you?
+    alt is sick
+        Bob->>Alice: Not so good :(
+    else is well
+        Bob->>Alice: Feeling fresh like a daisy
+    end
+    opt Extra response
+        Bob->>Alice: Thanks for asking
+    end
+</pre>
+<!-- spellchecker-enable -->
+
+  </div>
+  
+</div>]]></content><category scheme="https://shanhaiyuting.cn/authors/john-doe" term="john-doe" label="john-doe"/><category scheme="https://shanhaiyuting.cn/tags/documentation" term="documentation" label="Documentation"/><category scheme="https://shanhaiyuting.cn/tags/shortcodes" term="shortcodes" label="Shortcodes"/></entry><entry><title type="html">Shortcodes</title><link href="https://shanhaiyuting.cn/posts/advanced/shortcodes/?utm_source=atom_feed" rel="alternate" type="text/html" hreflang="en"/><id>https://shanhaiyuting.cn/posts/advanced/shortcodes/</id><author><name>John Doe</name></author><published>2021-05-23T20:00:00+01:00</published><updated>2021-12-29T23:37:57+08:00</updated><content type="html"><![CDATA[<!-- markdownlint-disable MD024 -->
+<p>The theme bundles some handy shortcodes that tries to cover common situations.</p>
+  <div class="gblog-toc gblog-toc__level--1"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#buttons">Buttons</a>
+          <ul>
+            <li><a href="#example">Example</a></li>
+          </ul>
+        </li>
+        <li><a href="#columns">Columns</a>
+          <ul>
+            <li><a href="#example-1">Example</a></li>
+          </ul>
+        </li>
+        <li><a href="#emojify">Emojify</a></li>
+        <li><a href="#expand">Expand</a>
+          <ul>
+            <li><a href="#example-2">Example</a>
+              <ul>
+                <li><a href="#default">Default</a></li>
+                <li><a href="#with-custom-label">With Custom Label</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#hint">Hint</a>
+          <ul>
+            <li><a href="#example-3">Example</a></li>
+          </ul>
+        </li>
+        <li><a href="#icon">Icon</a>
+          <ul>
+            <li><a href="#example-4">Example</a></li>
+          </ul>
+        </li>
+        <li><a href="#tabs">Tabs</a>
+          <ul>
+            <li><a href="#example-5">Example</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav><hr></div>
+
+
+<div class="gblog-post__anchorwrap">
+    <h2 id="buttons">
+        Buttons
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/shortcodes/#buttons" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Buttons" href="#buttons">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>Buttons are styled links that can lead to local page or external link.</p>
+<!-- prettier-ignore -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tpl" data-lang="tpl"><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">button</span> <span class="na">relref</span><span class="o">=</span><span class="s2">&#34;/&#34;</span> <span class="o">[</span><span class="na">class</span><span class="o">=</span><span class="s2">&#34;...&#34;</span><span class="o">,</span> <span class="na">size</span><span class="o">=</span><span class="s2">&#34;large|regular&#34;</span><span class="o">]</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">Get Home</span><span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="na">button</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">button</span> <span class="na">href</span><span class="o">=</span><span class="s2">&#34;https://github.com/thegeeklab/hugo-geekblog&#34;</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">Contribute</span><span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="na">button</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span></code></pre></div><div class="gblog-post__anchorwrap">
+    <h3 id="example">
+        Example
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/shortcodes/#example" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Example" href="#example">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h3>
+</div><p>
+
+
+
+
+
+
+
+  
+
+
+<span class="gblog-button gblog-button--regular">
+<a  href="/"  class="gblog-button__link">
+  Get Home
+</a>
+</span>
+
+
+
+
+
+
+
+  
+
+
+
+
+<span class="gblog-button gblog-button--regular">
+<a  href="https://github.com/thegeeklab/hugo-geekblog"  class="gblog-button__link">
+  Contribute
+</a>
+</span>
+</p>
+<div class="gblog-post__anchorwrap">
+    <h2 id="columns">
+        Columns
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/shortcodes/#columns" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Columns" href="#columns">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>The Columns shortcode can be used to organize content side-by-side (horizontally) for better readability.</p>
+<!-- prettier-ignore -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html">{{<span class="p">&lt;</span> <span class="nt">columns</span> <span class="p">&gt;</span>}} <span class="c">&lt;!-- begin columns block --&gt;</span>
+# Left Content
+Dolor sit, sumo unique argument um no ...
+
+<span class="p">&lt;</span><span class="nt">---</span><span class="p">&gt;</span> <span class="c">&lt;!-- magic sparator, between columns --&gt;</span>
+
+# Mid Content
+Dolor sit, sumo unique argument um no ...
+
+<span class="p">&lt;</span><span class="nt">---</span><span class="p">&gt;</span> <span class="c">&lt;!-- magic sparator, between columns --&gt;</span>
+
+# Right Content
+Dolor sit, sumo unique argument um no ...
+{{<span class="p">&lt;</span> <span class="p">/</span><span class="nt">columns</span> <span class="p">&gt;</span>}}
+</code></pre></div><div class="gblog-post__anchorwrap">
+    <h3 id="example-1">
+        Example
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/shortcodes/#example-1" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Example" href="#example-1">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h3>
+</div><div class="gblog-columns flex flex-wrap flex-mobile-column">
+  
+  <div class="gblog-columns__content gblog-markdown--nested flex-even">
+    <div class="gblog-post__anchorwrap">
+    <h4 id="left">
+        Left
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/shortcodes/#left" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Left" href="#left">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h4>
+</div><p>Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
+investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts
+feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious
+copious quo ad. Stet probates in duo.
+  </div>
+  
+  <div class="gblog-columns__content gblog-markdown--nested flex-even">
+    <div class="gblog-post__anchorwrap">
+    <h4 id="mid-content">
+        Mid Content
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/shortcodes/#mid-content" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Mid Content" href="#mid-content">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h4>
+</div><p>Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
+investiture. Ornateness bland it ex enc, est yeti am bongo detract re.
+  </div>
+  
+  <div class="gblog-columns__content gblog-markdown--nested flex-even">
+    <div class="gblog-post__anchorwrap">
+    <h4 id="right-content">
+        Right Content
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/shortcodes/#right-content" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Right Content" href="#right-content">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h4>
+</div><p>Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
+investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts
+feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious
+copious quo ad. Stet probates in duo.
+  </div>
+  
+</div>
+
+<div class="gblog-post__anchorwrap">
+    <h2 id="emojify">
+        Emojify
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/shortcodes/#emojify" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Emojify" href="#emojify">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>Emoji can be enabled in a Hugo project in a number of ways.</p>
+<p>The <a class="gblog-markdown__link" href="https://gohugo.io/functions/emojify/">emojify</a> function can be called directly in templates or <a class="gblog-markdown__link" href="https://gohugo.io/templates/shortcode-templates/#inline-shortcodes">Inline Shortcodes</a>. To enable emoji globally, set <code>enableEmoji</code> to <code>true</code> in your site&rsquo;s <a class="gblog-markdown__link" href="https://gohugo.io/getting-started/configuration/">configuration</a> and then you can type emoji shorthand codes directly in content files:</p>
+<table>
+<thead>
+<tr>
+<th>Result</th>
+<th>Inline</th>
+<th>Shortcode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="emoji">🙈</span>
+</td>
+<td><code>:see_no_evil:</code></td>
+<td><code>{{&lt; emojify &quot;:see_no_evil:&quot; &gt;}}</code></td>
+</tr>
+<tr>
+<td><span class="emoji">🙉</span>
+</td>
+<td><code>:hear_no_evil:</code></td>
+<td><code>{{&lt; emojify &quot;:hear_no_evil:&quot; &gt;}}</code></td>
+</tr>
+<tr>
+<td><span class="emoji">🙊</span>
+</td>
+<td><code>:speak_no_evil:</code></td>
+<td><code>{{&lt; emojify &quot;:speak_no_evil:&quot; &gt;}}</code></td>
+</tr>
+</tbody>
+</table>
+<p>The <a class="gblog-markdown__link" href="http://www.emoji-cheat-sheet.com/">Emoji cheat sheet</a> is a useful reference for emoji shorthand codes.</p>
+<blockquote class="gblog-hint info">
+  <strong>Info</strong><br>
+The above steps enable Unicode Standard emoji characters and sequences in Hugo, however the rendering of these glyphs depends on the browser and the platform. To style the emoji you can either use a third party emoji font or a font stack.
+</blockquote>
+
+<p><strong>Styling:</strong></p>
+<!-- spellchecker-disable -->
+<!-- prettier-ignore -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html">.emoji {
+  font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols;
+}</code></pre></td></tr></table>
+</div>
+</div>
+<!-- spellchecker-enable -->
+<div class="gblog-post__anchorwrap">
+    <h2 id="expand">
+        Expand
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/shortcodes/#expand" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Expand" href="#expand">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>Expand shortcode can help to decrease clutter on screen by hiding part of text. Expand content by clicking on it.</p>
+<div class="gblog-post__anchorwrap">
+    <h3 id="example-2">
+        Example
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/shortcodes/#example-2" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Example" href="#example-2">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h3>
+</div><div class="gblog-post__anchorwrap">
+    <h4 id="default">
+        Default
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/shortcodes/#default" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Default" href="#default">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h4>
+</div><!-- prettier-ignore -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tpl" data-lang="tpl"><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">expand</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span><span class="x">## Markdown content
+</span><span class="x">Dolor sit, sumo unique ...
+</span><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="na">expand</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span></code></pre></div>
+<div class="gblog-expand">
+  <label class="gblog-expand__head flex justify-between" for="d4821667-9">
+    <span>Expand</span>
+    <span>↕</span>
+  </label>
+  <input id="d4821667-9" type="checkbox" class="gblog-expand__control hidden" />
+  <div class="gblog-markdown--nested gblog-expand__content">
+    <div class="gblog-post__anchorwrap">
+    <h5 id="markdown-content">
+        Markdown content
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/shortcodes/#markdown-content" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Markdown content" href="#markdown-content">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h5>
+</div><p>Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture. Ornateness bland it ex enc, est yeti am bongo detract re.
+  </div>
+</div>
+
+<div class="gblog-post__anchorwrap">
+    <h4 id="with-custom-label">
+        With Custom Label
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/shortcodes/#with-custom-label" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor With Custom Label" href="#with-custom-label">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h4>
+</div><!-- prettier-ignore -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tpl" data-lang="tpl"><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">expand</span> <span class="s2">&#34;Custom Label&#34;</span> <span class="s2">&#34;...&#34;</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span><span class="x">## Markdown content
+</span><span class="x">Dolor sit, sumo unique ...
+</span><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="na">expand</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span></code></pre></div>
+<div class="gblog-expand">
+  <label class="gblog-expand__head flex justify-between" for="d2128f21-10">
+    <span>Custom Label</span>
+    <span>...</span>
+  </label>
+  <input id="d2128f21-10" type="checkbox" class="gblog-expand__control hidden" />
+  <div class="gblog-markdown--nested gblog-expand__content">
+    <div class="gblog-post__anchorwrap">
+    <h5 id="more-markdown">
+        More markdown
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/shortcodes/#more-markdown" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor More markdown" href="#more-markdown">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h5>
+</div><p>Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
+investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts
+feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious
+copious quo ad. Stet probates in duo.
+  </div>
+</div>
+
+<div class="gblog-post__anchorwrap">
+    <h2 id="hint">
+        Hint
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/shortcodes/#hint" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Hint" href="#hint">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>Hint shortcode can be used as hint/alerts/notification block.
+There are four colors to choose: <code>info</code>, <code>ok</code>, <code>warning</code> and <code>danger</code>.</p>
+<!-- prettier-ignore -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tpl" data-lang="tpl"><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">hint</span> <span class="o">[</span><span class="na">info</span><span class="o">|</span><span class="na">warning</span><span class="o">|</span><span class="na">danger</span><span class="o">]</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span><span class="x">**Markdown content**\
+</span><span class="x">Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
+</span><span class="x">Ornateness bland it ex enc, est yeti am bongo detract re.
+</span><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="na">hint</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span></code></pre></div><div class="gblog-post__anchorwrap">
+    <h3 id="example-3">
+        Example
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/shortcodes/#example-3" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Example" href="#example-3">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h3>
+</div><blockquote class="gblog-hint info">
+  <strong>Markdown content</strong><br>
+Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
+Ornateness bland it ex enc, est yeti am bongo detract re.
+</blockquote>
+
+<blockquote class="gblog-hint ok">
+  <strong>Markdown content</strong><br>
+Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
+Ornateness bland it ex enc, est yeti am bongo detract re.
+</blockquote>
+
+<blockquote class="gblog-hint warning">
+  <strong>Markdown content</strong><br>
+Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
+Ornateness bland it ex enc, est yeti am bongo detract re.
+</blockquote>
+
+<blockquote class="gblog-hint danger">
+  <strong>Markdown content</strong><br>
+Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture.
+Ornateness bland it ex enc, est yeti am bongo detract re.
+</blockquote>
+
+<div class="gblog-post__anchorwrap">
+    <h2 id="icon">
+        Icon
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/shortcodes/#icon" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Icon" href="#icon">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>Simple shortcode to include icons from SVG sprites outside of menus.</p>
+<!-- prettier-ignore -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tpl" data-lang="tpl"><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">icon</span> <span class="s2">&#34;thumbs-up&#34;</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span></code></pre></div><div class="gblog-post__anchorwrap">
+    <h3 id="example-4">
+        Example
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/shortcodes/#example-4" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Example" href="#example-4">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h3>
+</div><table>
+<thead>
+<tr>
+<th>Result</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><svg class="icon thumbs-up"><use xlink:href="#thumbs-up"></use></svg></td>
+<td><code>{{&lt; icon &quot;thumbs-up&quot; &gt;}}</code></td>
+</tr>
+<tr>
+<td><svg class="icon thumbs-down"><use xlink:href="#thumbs-down"></use></svg></td>
+<td><code>{{&lt; icon &quot;thumbs-down&quot; &gt;}}</code></td>
+</tr>
+<tr>
+<td><svg class="icon laugh"><use xlink:href="#laugh"></use></svg></td>
+<td><code>{{&lt; icon &quot;laugh&quot; &gt;}}</code></td>
+</tr>
+<tr>
+<td><svg class="icon lemon"><use xlink:href="#lemon"></use></svg></td>
+<td><code>{{&lt; icon &quot;lemon&quot; &gt;}}</code></td>
+</tr>
+<tr>
+<td><svg class="icon moon"><use xlink:href="#moon"></use></svg></td>
+<td><code>{{&lt; icon &quot;moon&quot; &gt;}}</code></td>
+</tr>
+</tbody>
+</table>
+<div class="gblog-post__anchorwrap">
+    <h2 id="tabs">
+        Tabs
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/shortcodes/#tabs" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Tabs" href="#tabs">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>Tabs let you organize content by context, for example installation instructions for each supported platform.</p>
+<!-- prettier-ignore -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tpl" data-lang="tpl"><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">tabs</span> <span class="s2">&#34;uniqueid&#34;</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">tab</span> <span class="s2">&#34;macOS&#34;</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x"> # macOS Content </span><span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="na">tab</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">tab</span> <span class="s2">&#34;Linux&#34;</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x"> # Linux Content </span><span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="na">tab</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">tab</span> <span class="s2">&#34;Windows&#34;</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x"> # Windows Content </span><span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="na">tab</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="na">tabs</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span></code></pre></div><div class="gblog-post__anchorwrap">
+    <h3 id="example-5">
+        Example
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/shortcodes/#example-5" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Example" href="#example-5">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h3>
+</div>
+
+
+
+<div class="gblog-tabs">
+  
+    <input type="radio" class="gblog-tabs__control hidden" name="tabs-uniqueid" id="tabs-uniqueid-0"
+      checked="checked"  />
+    <label for="tabs-uniqueid-0" class="gblog-tabs__label">
+      macOS
+    </label>
+    <div class="gblog-markdown--nested gblog-tabs__content">
+      <div class="gblog-post__anchorwrap">
+    <h4 id="macos">
+        macOS
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/shortcodes/#macos" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor macOS" href="#macos">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h4>
+</div><p>This is tab <strong>macOS</strong> content.</p>
+<p>Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
+investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad
+prompts feud gait, quid exercise emeritus bis e. In pro quints consequent, denim
+fastidious copious quo ad. Stet probates in duo.</p>
+
+    </div>
+  
+    <input type="radio" class="gblog-tabs__control hidden" name="tabs-uniqueid" id="tabs-uniqueid-1"
+       />
+    <label for="tabs-uniqueid-1" class="gblog-tabs__label">
+      Linux
+    </label>
+    <div class="gblog-markdown--nested gblog-tabs__content">
+      <div class="gblog-post__anchorwrap">
+    <h4 id="linux">
+        Linux
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/shortcodes/#linux" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Linux" href="#linux">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h4>
+</div><p>This is tab <strong>Linux</strong> content.</p>
+<p>Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
+investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad
+prompts feud gait, quid exercise emeritus bis e. In pro quints consequent, denim
+fastidious copious quo ad. Stet probates in duo.</p>
+
+    </div>
+  
+    <input type="radio" class="gblog-tabs__control hidden" name="tabs-uniqueid" id="tabs-uniqueid-2"
+       />
+    <label for="tabs-uniqueid-2" class="gblog-tabs__label">
+      Windows
+    </label>
+    <div class="gblog-markdown--nested gblog-tabs__content">
+      <div class="gblog-post__anchorwrap">
+    <h4 id="windows">
+        Windows
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/shortcodes/#windows" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Windows" href="#windows">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h4>
+</div><p>This is tab <strong>Windows</strong> content.</p>
+<p>Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
+investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad
+prompts feud gait, quid exercise emeritus bis e. In pro quints consequent.</p>
+
+    </div>
+  
+</div>]]></content><category scheme="https://shanhaiyuting.cn/authors/john-doe" term="john-doe" label="john-doe"/><category scheme="https://shanhaiyuting.cn/tags/documentation" term="documentation" label="Documentation"/><category scheme="https://shanhaiyuting.cn/tags/shortcodes" term="shortcodes" label="Shortcodes"/></entry><entry><title type="html">Table of Content</title><link href="https://shanhaiyuting.cn/posts/advanced/toc/?utm_source=atom_feed" rel="alternate" type="text/html" hreflang="en"/><id>https://shanhaiyuting.cn/posts/advanced/toc/</id><author><name>John Doe</name></author><published>2021-05-23T20:00:00+01:00</published><updated>2021-12-29T23:37:57+08:00</updated><content type="html"><![CDATA[<p>Simple wrapper to generate a page Table of Content from a shortcode.</p>
+<!-- prettier-ignore -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tpl" data-lang="tpl"><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">toc</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span></code></pre></div>
+
+
+  <div class="gblog-toc gblog-toc__level--3"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#level-1">Level 1</a></li>
+        <li><a href="#level-2">Level 2</a>
+          <ul>
+            <li><a href="#level-21">Level 2.1</a>
+              <ul>
+                <li><a href="#level-211">Level 2.1.1</a>
+                  <ul>
+                    <li><a href="#level-2111">Level 2.1.1.1</a>
+                      <ul>
+                        <li><a href="#level-21111">Level 2.1.1.1.1</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#level-22">Level 2.2</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav><hr></div>
+
+
+<div class="gblog-post__anchorwrap">
+    <h2 id="level-1">
+        Level 1
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/toc/#level-1" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Level 1" href="#level-1">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious copious quo ad. Stet probates in duo.</p>
+<div class="gblog-post__anchorwrap">
+    <h2 id="level-2">
+        Level 2
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/toc/#level-2" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Level 2" href="#level-2">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>Amalia id per in minimum facility, quid facet modifier ea ma. Ill um select ma ad, en ferric patine sentient vim. Per expendable foreordained interpretations cu, maxim sole pertinacity in ram.</p>
+<div class="gblog-post__anchorwrap">
+    <h3 id="level-21">
+        Level 2.1
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/toc/#level-21" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Level 2.1" href="#level-21">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h3>
+</div><p>Amalia id per in minimum facility, quid facet modifier ea ma. Ill um select ma ad, en ferric patine sentient vim. Per expendable foreordained interpretations cu, maxim sole pertinacity in ram.</p>
+<div class="gblog-post__anchorwrap">
+    <h4 id="level-211">
+        Level 2.1.1
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/toc/#level-211" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Level 2.1.1" href="#level-211">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h4>
+</div><p>Amalia id per in minimum facility, quid facet modifier ea ma. Ill um select ma ad, en ferric patine sentient vim.</p>
+<div class="gblog-post__anchorwrap">
+    <h5 id="level-2111">
+        Level 2.1.1.1
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/toc/#level-2111" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Level 2.1.1.1" href="#level-2111">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h5>
+</div><p>In pro quints consequent, denim fastidious copious quo ad.</p>
+<div class="gblog-post__anchorwrap">
+    <h6 id="level-21111">
+        Level 2.1.1.1.1
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/toc/#level-21111" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Level 2.1.1.1.1" href="#level-21111">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h6>
+</div><p>In pro quints consequent, denim fastidious copious quo ad.</p>
+<div class="gblog-post__anchorwrap">
+    <h3 id="level-22">
+        Level 2.2
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/advanced/toc/#level-22" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Level 2.2" href="#level-22">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h3>
+</div><p>Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts feud gait, quid exercise emeritus bis e.</p>
+<p>Amalia id per in minimum facility, quid facet modifier ea ma. Ill um select ma ad, en ferric patine sentient vim. Per expendable foreordained interpretations cu, maxim sole pertinacity in ram.</p>]]></content><category scheme="https://shanhaiyuting.cn/authors/john-doe" term="john-doe" label="john-doe"/><category scheme="https://shanhaiyuting.cn/tags/documentation" term="documentation" label="Documentation"/><category scheme="https://shanhaiyuting.cn/tags/shortcodes" term="shortcodes" label="Shortcodes"/></entry><entry><title type="html">Post with images</title><link href="https://shanhaiyuting.cn/posts/post-with-images/?utm_source=atom_feed" rel="alternate" type="text/html" hreflang="en"/><id>https://shanhaiyuting.cn/posts/post-with-images/</id><author><name>John Doe</name></author><published>2020-06-22T20:00:00+02:00</published><updated>2021-12-29T23:37:57+08:00</updated><content type="html"><![CDATA[<p>If you need more flexibility for your embedded images, you could use the <code>img</code> shortcode. It is using Hugo&rsquo;s
+<a class="gblog-markdown__link" href="https://gohugo.io/content-management/page-resources/">page resources</a> and supports lazy loading of your images.</p>
+<p><strong>Attributes:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Usage</th>
+<th>default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name (string)</td>
+<td>Name of the image resource defined in your front matter.</td>
+<td>empty</td>
+</tr>
+<tr>
+<td>alt (string)</td>
+<td>Description for displayed image.</td>
+<td>resource <code>.Title</code></td>
+</tr>
+<tr>
+<td>size (string)</td>
+<td>Thumbnail size (tiny|small|medium|large).</td>
+<td>empty</td>
+</tr>
+<tr>
+<td>lazy (bool)</td>
+<td>Enable or disable image lazy loading. Can be controlled globally by site parameter <code>geekblogImageLazyLoading</code>.</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<p>Define your resources in the page front matter, custom parameter <code>params.credits</code> is optional.</p>
+<!-- spellchecker-disable -->
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md">---
+resources:
+  <span class="k">-</span> name: forest-1
+    src: &#34;images/forest-1.jpg&#34;
+    title: Forest (1)
+    params:
+      credits: &#34;[Jay Mantri](https://unsplash.com/@jaymantri) on [<span class="nt">Unsplash</span>](<span class="na">https://unsplash.com/s/photos/forest</span>)&#34;
+---
+
+{{<span class="p">&lt;</span> <span class="nt">img</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;forest-1&#34;</span> <span class="na">lazy</span><span class="o">=</span><span class="s">false</span> <span class="p">&gt;</span>}}
+</code></pre></div><!-- spellchecker-enable -->
+<p><strong>Demo:</strong></p>
+<!-- spellchecker-disable -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex justify-center">
+<figure class="gblog-post__figure">
+    <a class="gblog-markdown__link--raw" href="/posts/post-with-images/images/forest-1.jpg">
+        <picture>
+            <source
+                
+                srcset="/posts/post-with-images/images/forest-1_huf0e70c4b1d589e873fbb3db38b3321e8_732101_600x0_resize_q75_box.jpg 600w,
+                        /posts/post-with-images/images/forest-1_huf0e70c4b1d589e873fbb3db38b3321e8_732101_1200x0_resize_q75_box.jpg 1200w"
+                sizes="100vw"
+                 />
+            <img
+                
+                src="/posts/post-with-images/images/forest-1_huf0e70c4b1d589e873fbb3db38b3321e8_732101_1800x0_resize_q75_box.jpg" alt="Forest (1)" />
+        </picture>
+    </a>
+    
+    <figcaption>Forest (1) (<a class="gblog-markdown__link" href="https://unsplash.com/@jaymantri">Jay Mantri</a> on <a class="gblog-markdown__link" href="https://unsplash.com/s/photos/forest">Unsplash</a>)</figcaption>
+    
+</figure>
+</div>
+
+
+<!-- spellchecker-enable -->
+<p>Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
+investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts
+feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious
+copious quo ad. Stet probates in duo.</p>
+<!-- spellchecker-disable -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex justify-center">
+<figure class="gblog-post__figure">
+    <a class="gblog-markdown__link--raw" href="/posts/post-with-images/images/forest-2.jpg">
+        <picture>
+            <source
+                
+                srcset="/posts/post-with-images/images/forest-2_huf47195b7a8ad08a630baa779e1f89140_474232_600x0_resize_q75_box.jpg 600w,
+                        /posts/post-with-images/images/forest-2_huf47195b7a8ad08a630baa779e1f89140_474232_1200x0_resize_q75_box.jpg 1200w"
+                sizes="100vw"
+                 />
+            <img
+                loading="lazy"
+                src="/posts/post-with-images/images/forest-2_huf47195b7a8ad08a630baa779e1f89140_474232_1800x0_resize_q75_box.jpg" alt="Forest (2)" />
+        </picture>
+    </a>
+    
+    <figcaption>Forest (2) (<a class="gblog-markdown__link" href="https://unsplash.com/@jaymantri">Jay Mantri</a> on <a class="gblog-markdown__link" href="https://unsplash.com/s/photos/forest">Unsplash</a>)</figcaption>
+    
+</figure>
+</div>
+
+
+<!-- spellchecker-enable -->
+<p>Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
+investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts
+feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious
+copious quo ad. Stet probates in duo.</p>
+<!-- spellchecker-disable -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex justify-center">
+<figure class="gblog-post__figure">
+    <a class="gblog-markdown__link--raw" href="/posts/post-with-images/images/forest-3.jpg">
+        <picture>
+            <source
+                
+                srcset="/posts/post-with-images/images/forest-3_hud1407912a21fa7227ed9fdc913431e89_495327_600x0_resize_q75_box.jpg 600w,
+                        /posts/post-with-images/images/forest-3_hud1407912a21fa7227ed9fdc913431e89_495327_1200x0_resize_q75_box.jpg 1200w"
+                sizes="100vw"
+                 />
+            <img
+                loading="lazy"
+                src="/posts/post-with-images/images/forest-3_hud1407912a21fa7227ed9fdc913431e89_495327_1800x0_resize_q75_box.jpg" alt="Forest (3)" />
+        </picture>
+    </a>
+    
+    <figcaption>Forest (3) (<a class="gblog-markdown__link" href="https://unsplash.com/@jaymantri">Jay Mantri</a> on <a class="gblog-markdown__link" href="https://unsplash.com/s/photos/forest">Unsplash</a>)</figcaption>
+    
+</figure>
+</div>
+
+
+<!-- spellchecker-enable -->
+<p>Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
+investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts
+feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious
+copious quo ad. Stet probates in duo.</p>
+<!-- spellchecker-disable -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex justify-center">
+<figure class="gblog-post__figure">
+    <a class="gblog-markdown__link--raw" href="/posts/post-with-images/images/forest-4.jpg">
+        <picture>
+            <source
+                
+                srcset="/posts/post-with-images/images/forest-4_huf4f6a01c47b7aa47d715d35795be8550_482782_600x0_resize_q75_box.jpg 600w,
+                        /posts/post-with-images/images/forest-4_huf4f6a01c47b7aa47d715d35795be8550_482782_1200x0_resize_q75_box.jpg 1200w"
+                sizes="100vw"
+                 />
+            <img
+                loading="lazy"
+                src="/posts/post-with-images/images/forest-4_huf4f6a01c47b7aa47d715d35795be8550_482782_1800x0_resize_q75_box.jpg" alt="Forest (4)" />
+        </picture>
+    </a>
+    
+    <figcaption>Forest (4) (<a class="gblog-markdown__link" href="https://unsplash.com/@jaymantri">Jay Mantri</a> on <a class="gblog-markdown__link" href="https://unsplash.com/s/photos/forest">Unsplash</a>)</figcaption>
+    
+</figure>
+</div>
+
+
+<!-- spellchecker-enable -->
+<p>Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
+investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts
+feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious
+copious quo ad. Stet probates in duo.</p>
+<!-- spellchecker-disable -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex justify-center">
+<figure class="gblog-post__figure">
+    <a class="gblog-markdown__link--raw" href="/posts/post-with-images/images/forest-5.jpg">
+        <picture>
+            <source
+                
+                srcset="/posts/post-with-images/images/forest-5_hud285651439b536b7684a13ce42ca8107_415964_600x0_resize_q75_box.jpg 600w,
+                        /posts/post-with-images/images/forest-5_hud285651439b536b7684a13ce42ca8107_415964_1200x0_resize_q75_box.jpg 1200w"
+                sizes="100vw"
+                 />
+            <img
+                loading="lazy"
+                src="/posts/post-with-images/images/forest-5_hud285651439b536b7684a13ce42ca8107_415964_1800x0_resize_q75_box.jpg" alt="Forest (5)" />
+        </picture>
+    </a>
+    
+    <figcaption>Forest (5) (<a class="gblog-markdown__link" href="https://unsplash.com/@jaymantri">Jay Mantri</a> on <a class="gblog-markdown__link" href="https://unsplash.com/s/photos/forest">Unsplash</a>)</figcaption>
+    
+</figure>
+</div>
+
+
+<!-- spellchecker-enable -->
+<p>Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
+investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts
+feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious
+copious quo ad. Stet probates in duo.</p>
+<!-- spellchecker-disable -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex justify-center">
+<figure class="gblog-post__figure">
+    <a class="gblog-markdown__link--raw" href="/posts/post-with-images/images/forest-6.jpg">
+        <picture>
+            <source
+                
+                srcset="/posts/post-with-images/images/forest-6_hue6523e66d3bd440ba117b42f36bb7e6e_425356_600x0_resize_q75_box.jpg 600w,
+                        /posts/post-with-images/images/forest-6_hue6523e66d3bd440ba117b42f36bb7e6e_425356_1200x0_resize_q75_box.jpg 1200w"
+                sizes="100vw"
+                 />
+            <img
+                loading="lazy"
+                src="/posts/post-with-images/images/forest-6_hue6523e66d3bd440ba117b42f36bb7e6e_425356_1800x0_resize_q75_box.jpg" alt="Forest (6)" />
+        </picture>
+    </a>
+    
+    <figcaption>Forest (6) (<a class="gblog-markdown__link" href="https://unsplash.com/@the_asher_ward">Asher Ward</a> on <a class="gblog-markdown__link" href="https://unsplash.com/s/photos/forest">Unsplash</a>)</figcaption>
+    
+</figure>
+</div>
+
+
+<!-- spellchecker-enable -->
+<p>Dolor sit, sumo unique argument um no. Gracie nominal id xiv. Romanesque acclimates
+investiture. Ornateness bland it ex enc, est yeti am bongo detract re. Pro ad prompts
+feud gait, quid exercise emeritus bis e. In pro quints consequent, denim fastidious
+copious quo ad. Stet probates in duo.</p>
+<!-- spellchecker-disable -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex justify-center">
+<figure class="gblog-post__figure">
+    <a class="gblog-markdown__link--raw" href="/posts/post-with-images/images/forest-7.jpg">
+        <picture>
+            <source
+                
+                srcset="/posts/post-with-images/images/forest-7_hu4447587decf44a8bb973959385f480e4_187257_600x0_resize_q75_box.jpg 600w,
+                        /posts/post-with-images/images/forest-7_hu4447587decf44a8bb973959385f480e4_187257_1200x0_resize_q75_box.jpg 1200w"
+                sizes="100vw"
+                 />
+            <img
+                loading="lazy"
+                src="/posts/post-with-images/images/forest-7_hu4447587decf44a8bb973959385f480e4_187257_1800x0_resize_q75_box.jpg" alt="Forest (7)" />
+        </picture>
+    </a>
+    
+    <figcaption>Forest (7) (<a class="gblog-markdown__link" href="https://unsplash.com/@the_asher_ward">Asher Ward</a> on <a class="gblog-markdown__link" href="https://unsplash.com/s/photos/forest">Unsplash</a>)</figcaption>
+    
+</figure>
+</div>
+
+
+<!-- spellchecker-enable -->]]></content><category scheme="https://shanhaiyuting.cn/authors/john-doe" term="john-doe" label="john-doe"/><category scheme="https://shanhaiyuting.cn/tags/documentation" term="documentation" label="Documentation"/><category scheme="https://shanhaiyuting.cn/tags/shortcodes" term="shortcodes" label="Shortcodes"/></entry></feed>

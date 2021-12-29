@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://gohugo.io/" version="0.91.0">Hugo</generator><title type="html">Special User on 山海屿亭</title><subtitle type="html">愿山海广阔，有一屿可寄身，有一亭可静心</subtitle><link href="https://shanhaiyuting.cn/authors/special-user/" rel="alternate" type="text/html" title="HTML"/><link href="https://shanhaiyuting.cn/authors/special-user/feed.xml" rel="self" type="application/atom+xml" title="Atom"/><link href="https://shanhaiyuting.cn/authors/special-user/feed.json" rel="alternate" type="application/json" title="Json"/><updated>2021-12-29T15:39:09+00:00</updated><id>https://shanhaiyuting.cn/authors/special-user/</id><entry><title type="html">Getting Started</title><link href="https://shanhaiyuting.cn/posts/usage/getting-started/?utm_source=atom_feed" rel="alternate" type="text/html" hreflang="en"/><id>https://shanhaiyuting.cn/posts/usage/getting-started/</id><author><name>John Doe</name></author><author><name>Sven Special</name></author><published>2020-07-15T20:00:00+02:00</published><updated>2021-12-29T23:37:57+08:00</updated><content type="html"><![CDATA[<p>Geekblog is a simple Hugo theme for personal blogs. It is intentionally designed as a fast and lean theme and may not fit the requirements of complex projects. If a more feature-complete theme is required there are a lot of got alternatives out there. This post helps you to get started with the Geekblog theme, including initial setup and basic configuration.</p>
+<p><a class="gblog-markdown__link--raw" href="https://drone.thegeeklab.de/thegeeklab/hugo-geekblog"><img src="https://img.shields.io/drone/build/thegeeklab/hugo-geekblog?logo=drone&amp;server=https%3A%2F%2Fdrone.thegeeklab.de" alt="Build Status"  /></a>
+<a class="gblog-markdown__link--raw" href="https://gohugo.io"><img src="https://img.shields.io/badge/hugo-0.65-blue.svg" alt="Hugo Version"  /></a>
+<a class="gblog-markdown__link--raw" href="https://github.com/thegeeklab/hugo-geekblog/releases/latest"><img src="https://img.shields.io/github/v/release/thegeeklab/hugo-geekblog" alt="GitHub release"  /></a>
+<a class="gblog-markdown__link--raw" href="https://github.com/thegeeklab/hugo-geekblog/graphs/contributors"><img src="https://img.shields.io/github/contributors/thegeeklab/hugo-geekblog" alt="GitHub contributors"  /></a>
+<a class="gblog-markdown__link--raw" href="https://github.com/thegeeklab/hugo-geekblog/blob/main/LICENSE"><img src="https://img.shields.io/github/license/thegeeklab/hugo-geekblog" alt="License: MIT"  /></a></p>
+
+
+
+  <div class="gblog-toc gblog-toc__level--3"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#setup-requirements">Setup requirements</a></li>
+        <li><a href="#using-the-theme">Using the theme</a>
+          <ul>
+            <li><a href="#option-1-download-pre-build-release-bundle">Option 1: Download pre-build release bundle</a></li>
+            <li><a href="#option-2-clone-the-github-repository">Option 2: Clone the GitHub repository</a></li>
+          </ul>
+        </li>
+        <li><a href="#deployments">Deployments</a>
+          <ul>
+            <li><a href="#netlify">Netlify</a></li>
+            <li><a href="#subdirectories">Subdirectories</a></li>
+          </ul>
+        </li>
+        <li><a href="#known-limitations">Known Limitations</a>
+          <ul>
+            <li><a href="#minify-html-results-in-spacing-issues">Minify HTML results in spacing issues</a></li>
+          </ul>
+        </li>
+        <li><a href="#whats-next">Whats next?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav><hr></div>
+
+
+<div class="gblog-post__anchorwrap">
+    <h2 id="features">
+        Features
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/usage/getting-started/#features" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Features" href="#features">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><ul>
+<li>Clean and simple design</li>
+<li>Light and mobile-friendly</li>
+<li>Easy customization</li>
+<li>Zero initial configuration</li>
+<li>Handy shortcodes</li>
+<li>Simple sticky posts</li>
+<li>Content tags</li>
+<li>Multiple authors</li>
+<li>Supports Atom and JSON feeds</li>
+</ul>
+<div class="gblog-post__anchorwrap">
+    <h2 id="setup-requirements">
+        Setup requirements
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/usage/getting-started/#setup-requirements" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Setup requirements" href="#setup-requirements">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>You need a recent version of Hugo for local builds and previews of sites that use Geekblog. As we are using <a class="gblog-markdown__link" href="https://gulpjs.com/">gulp</a> as pre-processor the normal version of Hugo is sufficient. If you prefer the extended version of Hugo anyway this will work as well. For comprehensive Hugo documentation, see <a class="gblog-markdown__link" href="https://gohugo.io/documentation/">gohugo.io</a>.</p>
+<p>If you want to use the theme from a cloned branch instead of a release tarball you&rsquo;ll need to install <code>gulp</code> locally and run the default pipeline once to create all required assets.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="c1"># install required packages from package.json</span>
+npm install
+
+<span class="c1"># run gulp pipeline to build required assets</span>
+npx gulp default
+</code></pre></div><div class="gblog-post__anchorwrap">
+    <h2 id="using-the-theme">
+        Using the theme
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/usage/getting-started/#using-the-theme" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Using the theme" href="#using-the-theme">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>To prepare your new site environment just a few steps are required:</p>
+<ol>
+<li>
+<p>Create a new empty Hugo site.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell">hugo new site demosite
+</code></pre></div></li>
+<li>
+<p>Switch to the root of the new site.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="nb">cd</span> demosite
+</code></pre></div></li>
+<li>
+<p>Install the Geekblog theme from a <a class="gblog-markdown__link" href="#option-1-download-pre-build-release-bundle">release bundle</a> (recommended) or form <a class="gblog-markdown__link" href="#option-2-clone-the-github-repository">Git branch</a>.</p>
+</li>
+<li>
+<p>Create the minimal required Hugo configuration <code>config.toml</code>. For all configuration options see <a class="gblog-markdown__link" href="#configuration">here</a>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Toml" data-lang="Toml"><span class="nx">baseURL</span> <span class="p">=</span> <span class="s2">&#34;http://localhost&#34;</span>
+<span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;Geekblog&#34;</span>
+<span class="nx">theme</span> <span class="p">=</span> <span class="s2">&#34;hugo-geekblog&#34;</span>
+
+<span class="nx">pluralizeListTitles</span> <span class="p">=</span> <span class="kc">false</span>
+
+<span class="c"># Geekblog required configuration</span>
+<span class="nx">pygmentsUseClasses</span> <span class="p">=</span> <span class="kc">true</span>
+<span class="nx">pygmentsCodeFences</span> <span class="p">=</span> <span class="kc">true</span>
+<span class="nx">disablePathToLower</span> <span class="p">=</span> <span class="kc">true</span>
+
+<span class="c"># Needed for mermaid shortcodes</span>
+<span class="p">[</span><span class="nx">markup</span><span class="p">]</span>
+  <span class="p">[</span><span class="nx">markup</span><span class="p">.</span><span class="nx">goldmark</span><span class="p">.</span><span class="nx">renderer</span><span class="p">]</span>
+    <span class="nx">unsafe</span> <span class="p">=</span> <span class="kc">true</span>
+  <span class="p">[</span><span class="nx">markup</span><span class="p">.</span><span class="nx">tableOfContents</span><span class="p">]</span>
+    <span class="nx">startLevel</span> <span class="p">=</span> <span class="mi">1</span>
+    <span class="nx">endLevel</span> <span class="p">=</span> <span class="mi">9</span>
+
+<span class="p">[</span><span class="nx">taxonomies</span><span class="p">]</span>
+  <span class="nx">author</span> <span class="p">=</span> <span class="s2">&#34;authors&#34;</span>
+  <span class="nx">tag</span> <span class="p">=</span> <span class="s2">&#34;tags&#34;</span>
+
+<span class="p">[</span><span class="nx">mediaTypes</span><span class="p">]</span>
+  <span class="p">[</span><span class="nx">mediaTypes</span><span class="p">.</span><span class="s2">&#34;application/atom+xml&#34;</span><span class="p">]</span>
+    <span class="nx">suffixes</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;xml&#34;</span><span class="p">]</span>
+
+<span class="p">[</span><span class="nx">outputFormats</span><span class="p">]</span>
+  <span class="p">[</span><span class="nx">outputFormats</span><span class="p">.</span><span class="nx">Atom</span><span class="p">]</span>
+    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Atom&#34;</span>
+    <span class="nx">mediaType</span> <span class="p">=</span> <span class="s2">&#34;application/atom+xml&#34;</span>
+    <span class="nx">baseName</span> <span class="p">=</span> <span class="s2">&#34;feed&#34;</span>
+    <span class="nx">isPlainText</span> <span class="p">=</span> <span class="kc">false</span>
+    <span class="nx">rel</span> <span class="p">=</span> <span class="s2">&#34;alternate&#34;</span>
+    <span class="nx">isHTML</span> <span class="p">=</span> <span class="kc">false</span>
+    <span class="nx">noUgly</span> <span class="p">=</span> <span class="kc">true</span>
+    <span class="nx">permalinkable</span> <span class="p">=</span> <span class="kc">false</span>
+
+<span class="p">[</span><span class="nx">outputs</span><span class="p">]</span>
+  <span class="nx">home</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;HTML&#34;</span><span class="p">,</span> <span class="s2">&#34;ATOM&#34;</span><span class="p">]</span>
+  <span class="nx">page</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;HTML&#34;</span><span class="p">]</span>
+  <span class="nx">section</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;HTML&#34;</span><span class="p">]</span>
+  <span class="nx">taxonomy</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;HTML&#34;</span><span class="p">]</span>
+  <span class="nx">term</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;HTML&#34;</span><span class="p">,</span> <span class="s2">&#34;ATOM&#34;</span><span class="p">]</span>
+</code></pre></div></li>
+<li>
+<p>Test your site.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell">hugo server -D
+</code></pre></div><p>If you want to add some demo data you could use the content from the <a class="gblog-markdown__link" href="https://github.com/gohugoio/hugoBasicExample">Hugo basic example</a>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell">curl -L https://github.com/gohugoio/hugoBasicExample/archive/main.tar.gz <span class="p">|</span> tar -xz --exclude <span class="s2">&#34;config*&#34;</span> --exclude <span class="s2">&#34;LICENSE&#34;</span> --exclude <span class="s2">&#34;README*&#34;</span> --strip-components<span class="o">=</span><span class="m">1</span>
+</code></pre></div></li>
+</ol>
+<div class="gblog-post__anchorwrap">
+    <h3 id="option-1-download-pre-build-release-bundle">
+        Option 1: Download pre-build release bundle
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/usage/getting-started/#option-1-download-pre-build-release-bundle" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Option 1: Download pre-build release bundle" href="#option-1-download-pre-build-release-bundle">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h3>
+</div><p>Download and extract the latest release bundle into the theme directory.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell">mkdir -p themes/hugo-geekblog/
+curl -L https://github.com/thegeeklab/hugo-geekblog/releases/latest/download/hugo-geekblog.tar.gz <span class="p">|</span> tar -xz -C themes/hugo-geekblog/ --strip-components<span class="o">=</span><span class="m">1</span>
+</code></pre></div><div class="gblog-post__anchorwrap">
+    <h3 id="option-2-clone-the-github-repository">
+        Option 2: Clone the GitHub repository
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/usage/getting-started/#option-2-clone-the-github-repository" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Option 2: Clone the GitHub repository" href="#option-2-clone-the-github-repository">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h3>
+</div><blockquote class="gblog-hint info">
+  <strong>Info</strong><br>
+Keep in mind this method is not recommended and needs some extra steps to get it working.
+If you want to use the Theme as submodule keep in mind that your build process need to
+run the described steps as well.
+</blockquote>
+
+<p>Clone the Geekblog git repository.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell">git clone https://github.com/thegeeklab/hugo-geekblog.git themes/hugo-geekblog
+</code></pre></div><p>Build required theme assets e.g. CSS files and SVG sprites with <code>gulp</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell">npx gulp default
+</code></pre></div><div class="gblog-post__anchorwrap">
+    <h2 id="deployments">
+        Deployments
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/usage/getting-started/#deployments" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Deployments" href="#deployments">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><div class="gblog-post__anchorwrap">
+    <h3 id="netlify">
+        Netlify
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/usage/getting-started/#netlify" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Netlify" href="#netlify">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h3>
+</div><p>There are several ways to deploy your site with this theme on Netlify. Regardless of which solution you choose, the main goal is to ensure that the prebuilt theme release tarball is used or to run the <a class="gblog-markdown__link" href="#option-2-clone-the-github-repository">required commands</a> to prepare the theme assets before running the Hugo build command.</p>
+<p>Here are some possible solutions:</p>
+<p><strong>Use a Makefile:</strong></p>
+<p>Add a Makefile to your repository to bundle the required steps.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Makefile" data-lang="Makefile"><span class="nv">THEME_VERSION</span> <span class="o">:=</span> v0.8.2
+<span class="nv">THEME</span> <span class="o">:=</span> hugo-geekblog
+<span class="nv">BASEDIR</span> <span class="o">:=</span> docs
+<span class="nv">THEMEDIR</span> <span class="o">:=</span> <span class="k">$(</span>BASEDIR<span class="k">)</span>/themes
+<span class="nf">.PHONY</span><span class="o">:</span> <span class="n">doc</span>
+<span class="nf">doc</span><span class="o">:</span> <span class="n">doc</span>-<span class="n">assets</span> <span class="n">doc</span>-<span class="n">build</span>
+<span class="nf">.PHONY</span><span class="o">:</span> <span class="n">doc</span>-<span class="n">assets</span>
+<span class="nf">doc-assets</span><span class="o">:</span>
+   mkdir -p <span class="k">$(</span>THEMEDIR<span class="k">)</span>/<span class="k">$(</span>THEME<span class="k">)</span>/ <span class="p">;</span> <span class="se">\
+</span><span class="se"></span>   curl -sSL <span class="s2">&#34;https://github.com/thegeeklab/</span><span class="k">$(</span>THEME<span class="k">)</span><span class="s2">/releases/download/</span><span class="si">${</span><span class="nv">THEME_VERSION</span><span class="si">}</span><span class="s2">/</span><span class="k">$(</span>THEME<span class="k">)</span><span class="s2">.tar.gz&#34;</span> <span class="p">|</span> tar -xz -C <span class="k">$(</span>THEMEDIR<span class="k">)</span>/<span class="k">$(</span>THEME<span class="k">)</span>/ --strip-components<span class="o">=</span><span class="m">1</span>
+<span class="nf">.PHONY</span><span class="o">:</span> <span class="n">doc</span>-<span class="n">build</span>
+<span class="nf">doc-build</span><span class="o">:</span>
+        <span class="nb">cd</span> <span class="k">$(</span>BASEDIR<span class="k">)</span><span class="p">;</span> hugo
+<span class="nf">.PHONY</span><span class="o">:</span> <span class="n">clean</span>
+<span class="nf">clean</span><span class="o">:</span>
+   rm -rf <span class="k">$(</span>THEMEDIR<span class="k">)</span> <span class="o">&amp;&amp;</span> <span class="se">\
+</span><span class="se"></span>   rm -rf <span class="k">$(</span>BASEDIR<span class="k">)</span>/public
+</code></pre></div><p>This Makefile can be used in your <code>netlify.toml</code>, take a look at the Netlify <a class="gblog-markdown__link" href="https://docs.netlify.com/configure-builds/file-based-configuration/#sample-file">example</a> for more information:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="p">[</span><span class="nx">build</span><span class="p">]</span>
+<span class="nx">publish</span> <span class="p">=</span> <span class="s2">&#34;docs/public&#34;</span>
+<span class="nx">command</span> <span class="p">=</span> <span class="s2">&#34;make doc&#34;</span>
+</code></pre></div><p><strong>Chain required commands:</strong></p>
+<p>Chain all required commands to prepare the theme and build your site on the <code>command</code> option in your <code>netlify.toml</code> like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="p">[</span><span class="nx">build</span><span class="p">]</span>
+<span class="nx">publish</span> <span class="p">=</span> <span class="s2">&#34;docs/public&#34;</span>
+<span class="nx">command</span> <span class="p">=</span> <span class="s2">&#34;command1 &amp;&amp; command 2 &amp;&amp; command3 &amp;&amp; hugo&#34;</span>
+</code></pre></div><div class="gblog-post__anchorwrap">
+    <h3 id="subdirectories">
+        Subdirectories
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/usage/getting-started/#subdirectories" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Subdirectories" href="#subdirectories">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h3>
+</div><blockquote class="gblog-hint danger">
+  <strong>Warning</strong><br>
+As deploying Hugo sites on subdirectories is not as robust as on subdomains, we do not recommend this.
+If you have a choice, using a domain/subdomain should always be the preferred solution!
+</blockquote>
+
+<p>If you want to deploy your side to a subdirectory of your domain, some extra steps are required:</p>
+<ul>
+<li>Configure your Hugo base URL e.g. <code>baseURL = http://localhost/demo/</code>.</li>
+<li>Don&rsquo;t use <code>relativeURLs: false</code> nor <code>canonifyURLs: true</code> as is can cause unwanted side effects!</li>
+</ul>
+<p>There are two ways to get Markdown links or images working:</p>
+<ul>
+<li>Use the absolute path including your subdirectory e.g. <code>[testlink](/demo/example-site)</code></li>
+<li>Overwrite the HTML base in your site configuration with <code>geekblogOverwriteHTMLBase = true</code> and use the relative path e.g. <code>[testlink](example-site)</code></li>
+</ul>
+<p>But there is another special case if you use <code>geekblogOverwriteHTMLBase = true</code>. If you use anchors in your Markdown links you have to ensure to always include the page path. As an example <code>[testlink](#some-anchor)</code> will resolve to <code>http://localhost/demo/#some-anchor</code> and not automatically include the current page!</p>
+<div class="gblog-post__anchorwrap">
+    <h2 id="known-limitations">
+        Known Limitations
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/usage/getting-started/#known-limitations" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Known Limitations" href="#known-limitations">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><div class="gblog-post__anchorwrap">
+    <h3 id="minify-html-results-in-spacing-issues">
+        Minify HTML results in spacing issues
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/usage/getting-started/#minify-html-results-in-spacing-issues" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Minify HTML results in spacing issues" href="#minify-html-results-in-spacing-issues">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h3>
+</div><p>Using <code>hugo --minify</code> without further configuration or using other minify tools that also minify HTML files might result in spacing issues in the theme and is <strong>not</strong> supported.</p>
+<p>After some testing we decided to not spend effort to fix this issue for now as the benefit is very low. There are some parts of the theme where spaces between HTML elements matters but were stripped by minify tools. Some of these issues are related to <!-- spellchecker-disable --><a class="gblog-markdown__link" href="https://github.com/gohugoio/hugo/issues/6892">gohugoio/hugo#6892</a>.<!-- spellchecker-enable --> While recommendation like &ldquo;don&rsquo;t depend on whitespace in your layout&rdquo; sounds reasonable, it seems to be not that straight forward especially for something like embedded icons into the text flow.</p>
+<p>If you still want to use Hugo&rsquo;s minify flag you should at least exclude HTML file in your site <a class="gblog-markdown__link" href="https://gohugo.io/getting-started/configuration/#configure-minify">configuration</a>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="p">[</span><span class="nx">minify</span><span class="p">]</span>
+  <span class="nx">disableHTML</span> <span class="p">=</span> <span class="kc">true</span>
+</code></pre></div><div class="gblog-post__anchorwrap">
+    <h2 id="whats-next">
+        Whats next?
+        <a data-clipboard-text="https://shanhaiyuting.cn/posts/usage/getting-started/#whats-next" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Whats next?" href="#whats-next">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>There are a lot more things to discover. To get the most out of the Theme we have collected interesting posts covering more advanced topics:</p>
+<ul>
+<li><a class="gblog-markdown__link" href="/posts/usage/configuration/">Configuration</a></li>
+<li><a class="gblog-markdown__link" href="/posts/usage/menus/">Menus</a></li>
+<li><strong>Features</strong>
+<ul>
+<li><a class="gblog-markdown__link" href="/posts/features/code-blocks/">Code Blocks</a></li>
+<li><a class="gblog-markdown__link" href="/posts/features/dark-mode/">Dark Mode</a></li>
+<li><a class="gblog-markdown__link" href="/posts/features/icon-sets/">Icon Sets</a></li>
+<li><a class="gblog-markdown__link" href="/posts/features/theming/">Theming</a></li>
+<li><a class="gblog-markdown__link" href="/posts/features/authors/">Authors</a></li>
+<li><a class="gblog-markdown__link" href="/posts/features/sticky/">Sticky Posts</a></li>
+</ul>
+</li>
+<li><a class="gblog-markdown__link" href="/posts/advanced/shortcodes/">Shortcodes</a>
+<ul>
+<li><a class="gblog-markdown__link" href="/posts/post-with-images/">Advanced Images</a></li>
+<li><a class="gblog-markdown__link" href="/posts/advanced/includes/">Includes</a></li>
+<li><a class="gblog-markdown__link" href="/posts/advanced/mermaid/">Mermaid</a></li>
+<li><a class="gblog-markdown__link" href="/posts/advanced/toc/">Table of Content</a></li>
+</ul>
+</li>
+</ul>]]></content><category scheme="https://shanhaiyuting.cn/authors/john-doe" term="john-doe" label="john-doe"/><category scheme="https://shanhaiyuting.cn/authors/special-user" term="special-user" label="Special User"/><category scheme="https://shanhaiyuting.cn/tags/documentation" term="documentation" label="Documentation"/><category scheme="https://shanhaiyuting.cn/tags/usage" term="usage" label="Usage"/></entry></feed>
